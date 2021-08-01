@@ -1,0 +1,60 @@
+*{
+    background-color: black;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+form{
+    margin: auto;
+    /* padding: 5rem; */
+    /* border: 2px solid red; */
+display: flex;    
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color: white;
+width:40rem;
+height: 40rem;
+border-radius: 10px;
+background-color: rgba(255, 255, 255, 0.514);
+}
+.box{
+    padding: 1rem;
+    margin: 1rem;
+    /* background-color: rgba(255, 255, 255, 0.514); */
+    background: transparent;
+
+}
+input{
+    /* background-color: rgba(255, 255, 255, 0.514); */
+    color: white;
+    /* background-color: white; */
+    border: none;
+    border-bottom: violet;
+    border-radius: 10px;
+}
+textarea{
+    color: white;
+    /* background-color: white; */
+    border: none;
+    border-bottom: violet;
+    border-radius: 10px;
+}
+label{
+    background-color: transparent;
+}
+.sub{
+    width: 10rem;
+    height: 1.5rem;
+    background-color: white;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+.sub:hover{
+    background-color: black;
+    color: white;
+    height: 1.6rem;
+    width: 10.5rem;
+}

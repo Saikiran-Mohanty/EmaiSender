@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<style>
+    *{
+    background-color: black;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+form{
+    margin: auto;
+    /* padding: 5rem; */
+    /* border: 2px solid red; */
+display: flex;    
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color: white;
+width:40rem;
+height: 40rem;
+border-radius: 10px;
+background-color: rgba(255, 255, 255, 0.514);
+}
+.box{
+    padding: 1rem;
+    margin: 1rem;
+    /* background-color: rgba(255, 255, 255, 0.514); */
+    background: transparent;
+
+}
+input{
+    /* background-color: rgba(255, 255, 255, 0.514); */
+    color: white;
+    /* background-color: white; */
+    border: none;
+    border-bottom: violet;
+    border-radius: 10px;
+}
+textarea{
+    color: white;
+    /* background-color: white; */
+    border: none;
+    border-bottom: violet;
+    border-radius: 10px;
+}
+label{
+    background-color: transparent;
+}
+.sub{
+    width: 10rem;
+    height: 1.5rem;
+    background-color: white;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+.sub:hover{
+    background-color: black;
+    color: white;
+    height: 1.6rem;
+    width: 10.5rem;
+}
+</style>
+<body>
+    <h1>Conatct us</h1>
+    <form action="#" class="form">
+        <div class="box">
+            <Label>Name</Label>
+            <input type="text" id="subject" name="" required>
+            
+        </div>
+        <div class="box">
+            <label>Email</label>
+            <input type="email" name="Email" id="email" required>
+           
+        </div>
+        
+        <div class="box">
+            <Label>Message</Label>
+            <textarea name="text" id="text" cols="30" rows="10"></textarea>
+           
+        </div>
+        <input type="submit" value="Submit" class="sub"/>
+    </form>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $("form").on("submit", e => {
+          e.preventDefault();
+  
+          const email = $("#email").val().trim();
+          const subject = $("#subject").val().trim();
+          const text = $("#text").val().trim();
+  
+          const data = {
+            email,
+            subject,
+            text
+          };
+  
+          $.post("/email", data)
+          .then(() => {
+              window.location.href = "/email/sent";
+            })
+            .catch(() => {
+              window.location.href = "/error";
+            });
+        });
+      </script>
+</body>
+</html>
